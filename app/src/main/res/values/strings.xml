@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">SmartCityTraveller_App</string>
+    <string name="login">Login</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_password1">Confirm Password</string>
+    <string name="hint_dob">Date of Birth</string>
+    <string name="hint_mobile">Mobile No</string>
+    <string name="hint_name">Username</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_forgotpassword">FORGOT PASSWORD</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="choosetime">Enter the time below and let us Plan you Day!</string>
+    <string name="btn_submit">SUBMIT</string>
+    <string name="chooseactivity">Choose Wish To Visit</string>
+    <string name="monuments">Monuments</string>
+    <string name="resturants">Resturants</string>
+    <string name="events">Events</string>
+</resources>
