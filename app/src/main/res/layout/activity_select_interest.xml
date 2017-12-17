@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dell.smartcitytraveller_app.SelectInterestActivity">
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/GridLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_register"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="431dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:id="@+id/greetings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="@string/welcome"
+                android:textSize="25dip"
+                android:textColor="@color/text_color"/>
+
+            <TextView
+                android:id="@+id/chooseactivitytext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="50dp"
+                android:layout_marginLeft="20dp"
+                android:text="@string/chooseactivity"
+                android:textSize="25dip"
+                android:textColor="@color/text_color"/>
+
+            <RadioGroup
+                android:id="@+id/radio_types"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioButton android:id="@+id/radio_monuments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/monuments"
+                    android:textSize="25dip"
+                    android:checked = "true"/>
+                   <!-- android:onClick="onRadioButtonClicked"-->
+                <RadioButton android:id="@+id/radio_resturants"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/resturants"
+                    android:textSize="25dip"/>
+                    <!--android:onClick="onRadioButtonClicked"-->
+                <RadioButton android:id="@+id/radio_events"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/events"
+                    android:textSize="25dip"/>
+                    <!--android:onClick="onRadioButtonClicked"/>-->
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="#4c86ea"
+                android:text="@string/btn_submit"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:background="#4c86ea"
+                android:text="@string/btn_logout"
+                android:textColor="@color/white" />
+
+        </GridLayout>
+    </GridLayout>
+
+
+</android.support.constraint.ConstraintLayout>
+
+
+

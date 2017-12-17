@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dell.smartcitytraveller_app.SelectTimeActivity">
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/GridLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_register"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/greetings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/welcome"
+            android:textSize="25dip"
+            android:textColor="@color/text_color"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="388dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:id="@+id/choosetimetext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="1dp"
+                android:text="@string/choosetime"
+                android:textSize="25dip"
+                android:textColor="@color/text_color"/>
+
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="40dip"
+                    android:text="From"
+                    android:layout_weight="1"/>
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="40dip"
+                    android:text="To"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/fromTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/input_register_bg"
+                    android:textColor="@color/input_register"
+                    android:textColorHint="@color/input_register_hint"
+                    android:layout_marginRight="5dp"
+                    android:hint="00:15"
+                    android:textSize="25dip"
+                    android:layout_weight="1"/>
+                <EditText
+                    android:id="@+id/toTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/input_register"
+                    android:background="@color/input_register_bg"
+                    android:textColorHint="@color/input_register_hint"
+                    android:layout_marginLeft="5dp"
+                    android:hint="03:15"
+                    android:textSize="25dip"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <!-- Login Button -->
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dip"
+                android:background="#4c86ea"
+                android:text="@string/btn_submit"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:background="#4c86ea"
+                android:text="@string/btn_logout"
+                android:textColor="@color/white" />
+
+        </GridLayout>
+    </GridLayout>
+</android.support.constraint.ConstraintLayout>
