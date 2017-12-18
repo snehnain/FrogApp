@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SmartCityTraveller_App.iml" filepath="$PROJECT_DIR$/SmartCityTraveller_App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FrogApp.iml" filepath="$PROJECT_DIR$/FrogApp.iml" />
+      <module fileurl="file://D:\Documents\Dev\workspaceAndroid\FrogApp\SmartCityTraveller_App.iml" filepath="D:\Documents\Dev\workspaceAndroid\FrogApp\SmartCityTraveller_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

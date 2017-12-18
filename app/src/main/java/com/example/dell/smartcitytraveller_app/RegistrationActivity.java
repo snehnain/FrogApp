@@ -34,7 +34,8 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     private Button btn_Linktologin, btn_Register;
 
     //String username,password,confirmpassword,email,dob,mobile;
-    String url="http://172.16.232.89:8080/MobileWebService/RegisterationServlet";
+    //IP found with ipconfig
+    String url="http://172.16.235.204:8080/FrogDevService/RegisterationServlet";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
