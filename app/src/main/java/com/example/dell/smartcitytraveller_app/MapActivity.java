@@ -107,6 +107,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     // Variable defining the accessible Kms around the user
     double accessibleKmsAroundUser;
+    // User ID
+    int userID;
+    // Flags to know if the user wants to see monuments or restaurants in its code
+    boolean monumentsAllowed;
+    boolean restaurantsAllowed;
 
     // Flag to know if the autocomplete search bar has already been initialized
     boolean isSearchbarInitialized = false;
@@ -149,6 +154,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         // Render the layout (containing the map)
         setContentView(R.layout.activity_map);
 
@@ -160,6 +166,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         // Retrieve the nb of kilometers the user can walk from the intent that launched the current class
         accessibleKmsAroundUser = getIntent().getIntExtra("accessibleKms", 2);
+        // Retrieve user id
+        userID = getIntent().getIntExtra("id", 0);
+        // Retrieve preferences on monuments
+        monumentsAllowed = getIntent().getBooleanExtra("monuments", true);
+        // Retrieve preferences on restaurants
+        restaurantsAllowed = getIntent().getBooleanExtra("restaurants", true);
 
         //Construct a GeoDataClient. (to give access to the Places API database)
         mGeoDataClient = Places.getGeoDataClient(this, null);
@@ -764,7 +776,16 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
      * @return
      */
     private boolean PlaceTypesAreWanted(List<Integer> placeTypes){
-        List<Integer> wantedTypes = new ArrayList<>(Arrays.asList(79, 38, 4, 5, 22, 23, 24, 33, 48, 62, 66, 69, 90, 93));
+        List<Integer> wantedTypes = new ArrayList<>();
+        if(monumentsAllowed && restaurantsAllowed) {
+            wantedTypes = new ArrayList<>(Arrays.asList(79, 38, 4, 5, 22, 23, 24, 33, 48, 62, 66, 69, 90, 93));
+        }
+        if(monumentsAllowed && !restaurantsAllowed){
+            wantedTypes = new ArrayList<>(Arrays.asList( 4, 5, 22, 23, 24, 33, 48, 62, 66, 69, 90, 93));
+        }
+        if(!monumentsAllowed && restaurantsAllowed){
+            wantedTypes = new ArrayList<>(Arrays.asList( 79, 38));
+        }
         boolean areCurrentTypesWanted = false;
         // for each of the times of the given place, we check if it matches with one of the types we want, if yes the function will return tru and the place will be displayed
         for(int type : placeTypes){

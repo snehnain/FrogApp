@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         Intent screenActivity = new Intent(getApplicationContext(), RegistrationActivity.class);
         startActivity(screenActivity);
 
-        // The following lines correspond to the way the map class should be launched :
+        // The following lines correspond to the launch of the map class
         //Intent nMap = new Intent(this, MapActivity.class);
         //double accessibleKmsAroundUser = 1;
         //nMap.putExtra("accessibleKms", 2);

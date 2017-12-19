@@ -1,5 +1,6 @@
 package com.example.dell.smartcitytraveller_app;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,6 +39,9 @@ public class SelectInterestActivity extends AppCompatActivity {
 
     String url="http://192.168.1.15:8080/MobileWebService/ActivityServlet";
      //String url="http://172.16.237.168:8080/MobileWebService/ActivityServlet";
+
+    // Variable to use when a reference to the current activity is needed as a parameter in a nested method (in this case "this" does not refer to the current activity)
+    Activity thisActivity = this;
 
 
     @Override
@@ -149,8 +153,24 @@ public class SelectInterestActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 if(response.equals("success")){
                     //New user added. Now either start activity to login or your main activity
-                   displayToast("Interest Working fine");
-                    //TODO: start the new activity of your app
+                    displayToast("Interest Working fine");
+
+                    /** **************************************
+                     *  The following lines correspond to the launch of the map class
+                     * **************************************
+                     */
+                    Intent nMap = new Intent(thisActivity, MapActivity.class); // Creating a intent for moving to
+                    // We'll suppose that the "kms accessible around the user" equals 2 kms as it finally doesn't limit
+                    // the results of a request in the search bar ( the places around the used will only be listed in priority
+                    // in the results of a request)
+                    double accessibleKmsAroundUser = 2;
+                    nMap.putExtra("accessibleKms", accessibleKmsAroundUser);
+                    //Also sending informations about the id of the user, and his preferences
+                    nMap.putExtra("id", id);
+                    nMap.putExtra("monuments", edradio_monuments.isChecked());
+                    nMap.putExtra("restaurants", edradio_resturants.isChecked());
+                    startActivity(nMap);
+
                 }else {
                     //Wrong credentials according to your server logic. Prompt to re-enter the credentials
                     displayToast("Something went wrong. Please try again!");
